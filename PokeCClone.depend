@@ -1,0 +1,53 @@
+# depslib dependency file v1.0
+1591161448 source:d:\prof temp\lab icc\aula11\pokecclone\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"util.h"
+	"poketype.h"
+	"pokemon.h"
+	"pokebox.h"
+	"pkdex.h"
+
+1591160968 d:\prof temp\lab icc\aula11\pokecclone\util.h
+	"pokemon.h"
+
+1591161914 d:\prof temp\lab icc\aula11\pokecclone\pokemon.h
+	"poketype.h"
+
+1591160997 d:\prof temp\lab icc\aula11\pokecclone\poketype.h
+
+1591072665 d:\prof temp\lab icc\aula11\pokecclone\pokebox.h
+	"pokemon.h"
+	"util.h"
+
+1591207569 d:\prof temp\lab icc\aula11\pokecclone\pkdex.h
+	"pokemon.h"
+
+1591162229 source:d:\prof temp\lab icc\aula11\pokecclone\pkdex.c
+	<stdio.h>
+	<stdlib.h>
+	"pkdex.h"
+	"pokemon.h"
+	"util.h"
+	<stdlib.h>
+
+1591073880 source:d:\prof temp\lab icc\aula11\pokecclone\pokebox.c
+	"pokebox.h"
+
+1591161712 source:d:\prof temp\lab icc\aula11\pokecclone\pokemon.c
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+	"pokemon.h"
+
+1591162042 source:d:\prof temp\lab icc\aula11\pokecclone\poketype.c
+	"poketype.h"
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+
+1591161460 source:d:\prof temp\lab icc\aula11\pokecclone\util.c
+	"util.h"
+	<stdlib.h>
+
