@@ -49,7 +49,7 @@ static char* typeToStringAux(type_t type)
         return NULL;
     else if(((int)type < -1) || ((int)type > TOTALTYPES))
     {
-        printf("\nTIPO INEXISTENTE\n");
+        fprintf(stderr, "\nNON-EXISTING TYPE\n");
         exit(1);
     }
     else
@@ -118,7 +118,7 @@ type_t stringToType(char* typeString)
         return FAIRY;
     else
     {
-        printf("\nTipo Inexistente!\n");
+        fprintf(stderr, "\NON-EXISTING TYPE!\n");
         exit(1);
     }
     return -2;

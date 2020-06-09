@@ -15,7 +15,7 @@ pokemon_t** readPkDex(int *nEntries) {
 
     if(fp == NULL)
     {
-        printf("\nARQUIVO DE POKEDEX NAO ENCONTRADO!\n");
+        fprintf(stderr, "\nPOKEDEX FILE NOT FOUND!\n");
         exit(1);
     }
     else

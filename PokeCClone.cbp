@@ -41,6 +41,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="poketype.h" />
+		<Unit filename="savemanager.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="savemanager.h" />
 		<Unit filename="util.c">
 			<Option compilerVar="CC" />
 		</Unit>

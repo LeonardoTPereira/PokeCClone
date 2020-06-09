@@ -28,3 +28,32 @@ void printPokemon(pokemon_t *pokemon)
     printf("HP:\t% -5dAttack:\t% -5dDefense:\t% -5d\n", pokemon->hp, pokemon->atk, pokemon->def);
     printf("Speed:\t% -5dSpcAtk:\t% -5dSpcDef:\t% -5d\n", pokemon->speed, pokemon->spatk, pokemon->spdef);
 }
+
+
+void savePokemon(pokemon_t *pokemon, FILE* saveFile)
+{
+    int error;
+    // write struct to end of file
+    error = fwrite (pokemon, sizeof(pokemon_t), 1, saveFile);
+
+    if(error == 0)
+        fprintf(stderr, "\nERROR SAVING POKEMON!\n");
+
+}
+
+//Loads pokemon from an already openned savefile
+//This is for reading a whole team/pcbox with this function
+//Someone needs to open and close the file, not this method!
+pokemon_t* loadPokemon(FILE* saveFile)
+{
+    pokemon_t *pokemon;
+
+    pokemon = (pokemon_t*) malloc (sizeof(pokemon_t));
+
+    //Read a single Pokemon
+    if(0 == fread(pokemon, sizeof(pokemon_t), 1, saveFile))
+        pokemon = NULL;
+
+    return pokemon;
+}
+

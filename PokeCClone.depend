@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1591161448 source:d:\prof temp\lab icc\aula11\pokecclone\main.c
+1591658273 source:d:\prof temp\lab icc\aula11\pokecclone\main.c
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
@@ -8,12 +8,14 @@
 	"pokemon.h"
 	"pokebox.h"
 	"pkdex.h"
+	"savemanager.h"
 
-1591160968 d:\prof temp\lab icc\aula11\pokecclone\util.h
+1591653019 d:\prof temp\lab icc\aula11\pokecclone\util.h
 	"pokemon.h"
 
-1591161914 d:\prof temp\lab icc\aula11\pokecclone\pokemon.h
+1591654065 d:\prof temp\lab icc\aula11\pokecclone\pokemon.h
 	"poketype.h"
+	<stdio.h>
 
 1591160997 d:\prof temp\lab icc\aula11\pokecclone\poketype.h
 
@@ -21,10 +23,10 @@
 	"pokemon.h"
 	"util.h"
 
-1591207569 d:\prof temp\lab icc\aula11\pokecclone\pkdex.h
+1591588879 d:\prof temp\lab icc\aula11\pokecclone\pkdex.h
 	"pokemon.h"
 
-1591162229 source:d:\prof temp\lab icc\aula11\pokecclone\pkdex.c
+1591653148 source:d:\prof temp\lab icc\aula11\pokecclone\pkdex.c
 	<stdio.h>
 	<stdlib.h>
 	"pkdex.h"
@@ -35,19 +37,29 @@
 1591073880 source:d:\prof temp\lab icc\aula11\pokecclone\pokebox.c
 	"pokebox.h"
 
-1591161712 source:d:\prof temp\lab icc\aula11\pokecclone\pokemon.c
+1591659356 source:d:\prof temp\lab icc\aula11\pokecclone\pokemon.c
 	<stdlib.h>
 	<string.h>
 	<stdio.h>
 	"pokemon.h"
 
-1591162042 source:d:\prof temp\lab icc\aula11\pokecclone\poketype.c
+1591589130 source:d:\prof temp\lab icc\aula11\pokecclone\poketype.c
 	"poketype.h"
 	<stdlib.h>
 	<stdio.h>
 	<string.h>
 
-1591161460 source:d:\prof temp\lab icc\aula11\pokecclone\util.c
+1591653015 source:d:\prof temp\lab icc\aula11\pokecclone\util.c
 	"util.h"
+	<stdlib.h>
+
+1591653118 d:\prof temp\lab icc\aula11\pokecclone\savemanager.h
+	"pokemon.h"
+
+1591654090 source:d:\prof temp\lab icc\aula11\pokecclone\savemanager.c
+	"savemanager.h"
+	"util.h"
+	"pokemon.h"
+	<stdio.h>
 	<stdlib.h>
 

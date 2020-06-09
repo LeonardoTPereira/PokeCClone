@@ -2,6 +2,10 @@
 #define _UTIL_H
 
 #include "pokemon.h"
+#define DEXFILE "data/pokemon.csv"
+#define SAVEFILE "data/poketeam.dat"
+#define MAXTEAMSIZE 6
+
 
 //typedef struct _coord_t coord_t;
 typedef struct _coord_t

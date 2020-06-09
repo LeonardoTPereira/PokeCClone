@@ -3,9 +3,6 @@
 
 #include "pokemon.h"
 
-#define DEXFILE "data/pokemon.csv"
-
-
 
 pokemon_t** readPkDex();
 
