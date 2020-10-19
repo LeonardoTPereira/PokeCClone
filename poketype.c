@@ -1,4 +1,4 @@
-#include "poketype.h"
+#include "PokeType.h"
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -26,9 +26,9 @@ const float typeChart[TOTALTYPES][TOTALTYPES] = {
 };
 
 const char typeStrings[TOTALTYPES][10] = {
-    {"NORMAL"}, {"FIGHTING"}, {"FLYING"}, {"POISON"}, {"GROUND"}, {"ROCK"}, {"BUG"},
-    {"GHOST"}, {"STEEL"}, {"FIRE"}, {"WATER"}, {"GRASS"}, {"ELECTRIC"}, {"PSYCHIC"},
-    {"ICE"}, {"DRAGON"}, {"DARK"}, {"FAIRY"}
+    {"normal"}, {"fighting"}, {"flying"}, {"poison"}, {"ground"}, {"rock"}, {"bug"},
+    {"ghost"}, {"steel"}, {"fire"}, {"water"}, {"grass"}, {"electric"}, {"psychic"},
+    {"ice"}, {"dragon"}, {"dark"}, {"fairy"}
 };
 
 float checkAdvantage(type_t atkType, type_t defType)
@@ -80,45 +80,45 @@ type_t stringToType(char* typeString)
 {
     if(0 == strcmp(typeString, "nan"))
         return -1;
-    else if(0 == strcmp(typeString, "Normal"))
+    else if(0 == strcmp(typeString, typeStrings[NORMAL]))
         return NORMAL;
-    else if(0 == strcmp(typeString, "Fighting"))
+    else if(0 == strcmp(typeString, typeStrings[FIGHTING]))
         return FIGHTING;
-    else if(0 == strcmp(typeString, "Flying"))
+    else if(0 == strcmp(typeString, typeStrings[FLYING]))
         return FLYING;
-    else if(0 == strcmp(typeString, "Poison"))
+    else if(0 == strcmp(typeString, typeStrings[POISON]))
         return POISON;
-    else if(0 == strcmp(typeString, "Ground"))
+    else if(0 == strcmp(typeString, typeStrings[GROUND]))
         return GROUND;
-    else if(0 == strcmp(typeString, "Rock"))
+    else if(0 == strcmp(typeString, typeStrings[ROCK]))
         return ROCK;
-    else if(0 == strcmp(typeString, "Bug"))
+    else if(0 == strcmp(typeString, typeStrings[BUG]))
         return BUG;
-    else if(0 == strcmp(typeString, "Ghost"))
+    else if(0 == strcmp(typeString, typeStrings[GHOST]))
         return GHOST;
-    else if(0 == strcmp(typeString, "Steel"))
+    else if(0 == strcmp(typeString, typeStrings[STEEL]))
         return STEEL;
-    else if(0 == strcmp(typeString, "Fire"))
+    else if(0 == strcmp(typeString, typeStrings[FIRE]))
         return FIRE;
-    else if(0 == strcmp(typeString, "Water"))
+    else if(0 == strcmp(typeString, typeStrings[WATER]))
         return WATER;
-    else if(0 == strcmp(typeString, "Grass"))
+    else if(0 == strcmp(typeString, typeStrings[GRASS]))
         return GRASS;
-    else if(0 == strcmp(typeString, "Electric"))
+    else if(0 == strcmp(typeString, typeStrings[ELECTRIC]))
         return ELECTRIC;
-    else if(0 == strcmp(typeString, "Psychic"))
+    else if(0 == strcmp(typeString, typeStrings[PSYCHIC]))
         return PSYCHIC;
-    else if(0 == strcmp(typeString, "Ice"))
+    else if(0 == strcmp(typeString, typeStrings[ICE]))
         return ICE;
-    else if(0 == strcmp(typeString, "Dragon"))
+    else if(0 == strcmp(typeString, typeStrings[DRAGON]))
         return DRAGON;
-    else if(0 == strcmp(typeString, "Dark"))
+    else if(0 == strcmp(typeString, typeStrings[DARK]))
         return DARK;
-    else if(0 == strcmp(typeString, "Fairy"))
+    else if(0 == strcmp(typeString, typeStrings[FAIRY]))
         return FAIRY;
     else
     {
-        fprintf(stderr, "\NON-EXISTING TYPE!\n");
+        printf("\nTipo Inexistente!\n");
         exit(1);
     }
     return -2;

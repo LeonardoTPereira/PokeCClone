@@ -2,7 +2,7 @@
 #include <string.h>
 #include <stdio.h>
 
-#include "pokemon.h"
+#include "Pokemon.h"
 
 
 pokemon_t* createPokemon(int dexNumber, char* name, int hp, int atk, int def, int spatk, int spdef, int speed, type_t mainType, type_t subType)
@@ -18,7 +18,23 @@ pokemon_t* createPokemon(int dexNumber, char* name, int hp, int atk, int def, in
     pokemon->speed = speed;
     pokemon->mainType = mainType;
     pokemon->subType = subType;
+
+    resetStatus(pokemon);
+
     return pokemon;
+}
+
+void resetStatus(pokemon_t* pokemon)
+{
+    pokemon->stageAtk = 0;
+    pokemon->stageDef = 0;
+    pokemon->stageSpAtk = 0;
+    pokemon->stageSpDef = 0;
+    pokemon->stageSpeed = 0;
+    pokemon->stageAcc = 0;
+    pokemon->stageEva = 0;
+    pokemon->status = NONE;
+    pokemon->nTurnsStatus = 0;
 }
 
 void printPokemon(pokemon_t *pokemon)
@@ -29,15 +45,22 @@ void printPokemon(pokemon_t *pokemon)
     printf("Speed:\t% -5dSpcAtk:\t% -5dSpcDef:\t% -5d\n", pokemon->speed, pokemon->spatk, pokemon->spdef);
 }
 
-
+//Saves pokemon to an already openned savefile
+//This is for reading a whole team/pcbox with this function
+//Someone needs to open and close the file, not this method!
 void savePokemon(pokemon_t *pokemon, FILE* saveFile)
 {
     int error;
+
+    unsigned char* crypto = makeCryptoMon(pokemon);
+
     // write struct to end of file
-    error = fwrite (pokemon, sizeof(pokemon_t), 1, saveFile);
+    error = fwrite (crypto, sizeof(pokemon_t), 1, saveFile);
 
     if(error == 0)
         fprintf(stderr, "\nERROR SAVING POKEMON!\n");
+
+    free(crypto);
 
 }
 
@@ -46,6 +69,7 @@ void savePokemon(pokemon_t *pokemon, FILE* saveFile)
 //Someone needs to open and close the file, not this method!
 pokemon_t* loadPokemon(FILE* saveFile)
 {
+    unsigned char* crypto;
     pokemon_t *pokemon;
 
     pokemon = (pokemon_t*) malloc (sizeof(pokemon_t));
@@ -54,6 +78,9 @@ pokemon_t* loadPokemon(FILE* saveFile)
     if(0 == fread(pokemon, sizeof(pokemon_t), 1, saveFile))
         pokemon = NULL;
 
-    return pokemon;
-}
+    crypto = makeCryptoMon(pokemon);
 
+    free(pokemon);
+
+    return (pokemon_t*) crypto;
+}

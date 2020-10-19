@@ -1,11 +1,12 @@
 #ifndef _POKEBOX_H
 #define _POKEBOX_H
 
-#include "pokemon.h"
-#include "util.h"
+#include "Pokemon.h"
+#include "Util.h"
 
-#define MAXLINES 5
-#define MAXCOLLS 6
+#define BOXLINES 3
+#define BOXCOLLS 3
+#define BOXSIZE BOXLINES*BOXCOLLS
 
 typedef enum
 {
@@ -15,12 +16,12 @@ typedef enum
 } boxError_t;
 
 
-typedef pokemon_t* box_t[MAXLINES][MAXCOLLS];
+typedef pokemon_t* pokebox_t[BOXSIZE];
 
 int movePkmn(coord_t curPos, coord_t newPos);
 int addPkmn(coord_t pos);
 int removePkmn(coord_t pos);
 int checkIfOccupied(coord_t pos);
-
+void printBox(pokebox_t box);
 
 #endif //_POKEMON_H

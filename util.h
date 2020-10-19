@@ -1,9 +1,22 @@
 #ifndef _UTIL_H
 #define _UTIL_H
 
-#include "pokemon.h"
-#define DEXFILE "data/pokemon.csv"
-#define SAVEFILE "data/poketeam.dat"
+#include "Pokemon.h"
+#ifdef __linux__
+    #define DIRECTORY_NAME "data/"
+    #define SPRITE_DIRECTORY "sprites/"
+#endif // _WIN32
+
+#ifdef _WIN32
+    #define DIRECTORY_NAME "data\\"
+    #define SPRITE_DIRECTORY "sprites\\"
+#endif
+
+#define DEXFILE DIRECTORY_NAME"pokemon.csv"
+#define MOVEDEXFILE DIRECTORY_NAME"moves.csv"
+#define SAVEFILE DIRECTORY_NAME"poketeam.dat"
+#define ASCIISPRITEDIR DIRECTORY_NAME SPRITE_DIRECTORY
+#define ASCIIEXTENSION ".asc"
 #define MAXTEAMSIZE 6
 
 

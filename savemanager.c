@@ -1,9 +1,10 @@
-#include "savemanager.h"
-#include "util.h"
-#include "pokemon.h"
+#include "SaveManager.h"
+#include "Util.h"
+#include "Pokemon.h"
 
 #include<stdio.h>
 #include<stdlib.h>
+#include<string.h>
 
 void saveTeam(pokemon_t** pokeTeam, char* fileName)
 {
@@ -61,4 +62,17 @@ pokemon_t** loadTeam(char* fileName)
     return pokeTeam;
 }
 
+unsigned char* makeCryptoMon(pokemon_t* pokemon)
+{
+    int size = sizeof(pokemon_t);
+    unsigned char* cryptomon;
 
+    cryptomon = (unsigned char*) malloc(sizeof(pokemon_t));
+
+    memcpy(cryptomon, pokemon, size);
+
+    for(int i = 0; i < size; ++i)
+        cryptomon[i] = cryptomon[i]^200;
+
+    return cryptomon;
+}
