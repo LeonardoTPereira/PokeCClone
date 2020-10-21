@@ -1,6 +1,8 @@
 #ifndef _UTIL_H
 #define _UTIL_H
 
+#include <stdlib.h>
+
 #include "Pokemon.h"
 #ifdef __linux__
     #define DIRECTORY_NAME "data/"

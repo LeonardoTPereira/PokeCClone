@@ -29,5 +29,5 @@ void printBox(pokebox_t box)
         printBoxLine(boxLinePokemon, BOXCOLLS);
         printf("\n");
     }
-
+    free(boxLinePokemon);
 }

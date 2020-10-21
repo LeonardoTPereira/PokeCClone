@@ -30,8 +30,8 @@ typedef enum _target_t
 
 typedef struct _move_t move_t;
 
-#include "poketype.h"
-#include "pokemon.h"
+#include "PokeType.h"
+#include "Pokemon.h"
 #include "Util.h"
 
 struct _move_t

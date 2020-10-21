@@ -7,6 +7,8 @@
 #include <errno.h>
 #include "Util.h"
 
+#define DEXNUMBERDIGITS 3
+
 int getNDigits(int number);
 int getFileSize(char* fileName);
 char* getFilePathFromDexNumber(int dexNumber);

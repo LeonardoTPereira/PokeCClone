@@ -57,12 +57,14 @@
 
 int main()
 {
-    pokemon_t** team = NULL;
+    //pokemon_t** team = NULL;
     pokemon_t** pkdex = NULL;
-    pokebox_t box;
-    srand(time(NULL));
+    #ifdef DEBUG
+        pokebox_t box;
+    #endif
+        srand(time(NULL));
     //box_t* pcBox = NULL;
-    int actualTeamSize = 6;
+    //int actualTeamSize = 6;
     int totalPkmn = 0;
 
     #ifdef DEBUG
@@ -79,16 +81,21 @@ int main()
         printPokemon(team[i]);
     }*/
 
-    for (int i = 0; i < BOXSIZE; i++) {
-        box[i] = randPkmn(pkdex, totalPkmn);
-    }
+    #ifdef DEBUG
+        for (int i = 0; i < BOXSIZE; i++) {
+            box[i] = randPkmn(pkdex, totalPkmn);
+        }
 
-    box[3] = NULL;
+        box[3] = NULL;
 
-    printBox(box);
+        printBox(box);
+    #endif
 
     for(int i = 0; i < totalPkmn; ++i)
+    {
         free(pkdex[i]);
+    }
+    free(pkdex);
 
 
     /*saveTeam(team, "data/player2.dat");

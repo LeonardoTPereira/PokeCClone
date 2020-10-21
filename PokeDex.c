@@ -4,7 +4,6 @@
 #include "PokeDex.h"
 #include "Pokemon.h"
 #include "Util.h"
-#include <stdlib.h>
 
 pokemon_t** readPkDex(int *nEntries) {
 
@@ -37,7 +36,6 @@ pokemon_t** readPkDex(int *nEntries) {
                 auxPkmn.mainType = stringToType(auxMainType);
                 auxPkmn.subType = stringToType(auxSubType);
                 //printPokemon(&auxPkmn);
-                pkdex[*nEntries - 1] = (pokemon_t*) malloc(sizeof(pokemon_t));
                 pkdex[*nEntries - 1] = createPokemon(auxPkmn.dexNumber, auxPkmn.species, auxPkmn.hp, auxPkmn.atk, auxPkmn.def,
                                     auxPkmn.spatk, auxPkmn.spdef, auxPkmn.speed, auxPkmn.mainType, auxPkmn.subType);
             }

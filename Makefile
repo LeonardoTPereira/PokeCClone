@@ -11,8 +11,8 @@ run:
 debug:
 	gcc -DDEBUG -Wall $(MAIN) $(UTIL) -o $(BINARY)
 
-plot:
-	gnuplot "plotdata" -p
+valgrind:
+	valgrind --tool=memcheck --leak-check=full  --track-origins=yes --show-leak-kinds=all --show-reachable=yes ./$(BINARY)
 
 clean:
 	@rm *.o

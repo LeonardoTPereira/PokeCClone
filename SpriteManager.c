@@ -1,15 +1,5 @@
 #include "SpriteManager.h"
 
-int getNDigits(int number)
-{
-    int nDigits = 0;
-    while (number != 0) {
-        number /= 10;
-        ++nDigits;
-    }
-    return nDigits;
-}
-
 int getFileSize(char* fileName)
 {
     FILE* pFile;
@@ -33,11 +23,11 @@ int getFileSize(char* fileName)
 char* getFilePathFromDexNumber(int dexNumber)
 {
     char *filePath, *sizeAsString;
-    int filePathSize, nDigits;
-    nDigits = getNDigits(3);
-    filePathSize = strlen(ASCIISPRITEDIR) + nDigits + strlen(ASCIIEXTENSION) + 1;
+    int filePathSize;
+    //3 digits for the dex number
+    filePathSize = strlen(ASCIISPRITEDIR) + DEXNUMBERDIGITS + strlen(ASCIIEXTENSION) + 1;
 
-    sizeAsString = (char*) malloc((sizeof(char)*nDigits)+1);
+    sizeAsString = (char*) malloc((sizeof(char)*DEXNUMBERDIGITS)+1);
     sprintf(sizeAsString, "%03d", dexNumber);
 
     filePath = (char*) malloc(sizeof(char)*filePathSize);
@@ -82,9 +72,14 @@ char* loadASCII(int dexNumber)
 
     result = fread(spriteASCII, sizeof(char), fileSize, pFile);
     if (result != fileSize)
+    {
         printf("Reading error\n");
+        exit(EXIT_FAILURE);
+    }
     // closing the file
     fclose(pFile);
+
+    free(fileName);
 
     return spriteASCII;
 }
@@ -137,5 +132,9 @@ void printBoxLine(pokemon_t **pokeBoxLine, int lineSize)
             printf("\t\t\t\t\t\t\t\t\t");
     }
     printf("\n");
+    for(int i = 0; i < lineSize; ++i)
+    {
+        free(spritesASCII[i]);
+    }
     free(spritesASCII);
 }

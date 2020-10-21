@@ -1,7 +1,5 @@
 #include "Util.h"
 
-#include <stdlib.h>
-
 void addStringTerminator(char* myString)
 {
     int idx = 0;
