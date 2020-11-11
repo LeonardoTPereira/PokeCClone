@@ -48,7 +48,7 @@
 #include <time.h>
 
 #include "Util.h"
-#include "Poketype.h"
+#include "PokeType.h"
 #include "Pokemon.h"
 #include "PokeBox.h"
 #include "PokeDex.h"
