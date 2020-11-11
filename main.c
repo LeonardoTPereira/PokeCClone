@@ -89,6 +89,10 @@ int main()
         box[3] = NULL;
 
         printBox(box);
+		
+		for (int i = 0; i < BOXSIZE; i++) {
+            box[i] = NULL;
+        }
     #endif
 
     for(int i = 0; i < totalPkmn; ++i)

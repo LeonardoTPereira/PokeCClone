@@ -68,7 +68,7 @@ char* loadASCII(int dexNumber)
         exit(EXIT_FAILURE);
     }
 
-    spriteASCII = (char*) malloc(sizeof(char)*fileSize);
+    spriteASCII = (char*) malloc(sizeof(char)*(fileSize+1));
 
     result = fread(spriteASCII, sizeof(char), fileSize, pFile);
     if (result != fileSize)
@@ -76,6 +76,7 @@ char* loadASCII(int dexNumber)
         printf("Reading error\n");
         exit(EXIT_FAILURE);
     }
+	spriteASCII[result] = '\0';
     // closing the file
     fclose(pFile);
 

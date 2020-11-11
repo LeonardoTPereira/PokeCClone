@@ -12,8 +12,5 @@ void addStringTerminator(char* myString)
 
 pokemon_t* randPkmn(pokemon_t** pkdex, int totalPokemon)
 {
-    pokemon_t auxPkmn;
-    auxPkmn = *(pkdex[rand()%totalPokemon]);
-    return createPokemon(auxPkmn.dexNumber, auxPkmn.species, auxPkmn.hp, auxPkmn.atk, auxPkmn.def,
-                                    auxPkmn.spatk, auxPkmn.spdef, auxPkmn.speed, auxPkmn.mainType, auxPkmn.subType);
+    return pkdex[rand()%totalPokemon];
 }
